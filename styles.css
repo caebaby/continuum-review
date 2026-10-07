@@ -420,7 +420,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   position: relative; display: grid; min-height: 440px;
   grid-template-columns: 1fr calc(var(--p) * 24%) 1fr;
 }
-.split-block { padding: clamp(32px, 3.6vw, 56px); display: flex; flex-direction: column; justify-content: flex-end; }
+.split-block { padding: clamp(40px, 4vw, 60px) clamp(32px, 3.6vw, 56px); display: flex; flex-direction: column; justify-content: flex-start; }
 .split-block > * { opacity: calc((var(--p) - .55) * 2.4); }
 .split-one { background: var(--pine); color: var(--chalk); border-radius: 2px 0 0 2px; }
 .split-one .ph { color: rgba(231, 236, 232, .74); background: rgba(231, 236, 232, .07); border-color: rgba(231, 236, 232, .32); }
@@ -430,6 +430,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   position: relative; overflow: hidden; display: grid; align-content: center; justify-items: center; text-align: center; padding: 0 12px;
   opacity: calc((var(--p) - .6) * 2.5);
 }
+.js .split-block.reveal { transform: none; }
 .js .split-gap.reveal.is-in { opacity: calc((var(--p) - .6) * 2.5); }
 .split-gap::before { content: ""; position: absolute; left: 50%; top: 0; bottom: 0; border-left: 1px dashed rgba(16, 32, 28, .4); z-index: -1; }
 .split-gap-label {
@@ -491,6 +492,22 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 }
 .js .pause-line.is-scrub .pause-two { opacity: calc(.25 + .75 * clamp(0, (var(--q, 0) - .72) / .2, 1)); transition: none; }
 .js .pause-line.is-scrub .pause-two .pause-track { transform: scaleX(clamp(0, (var(--q, 0) - .72) / .28, 1)); transition: none; }
+
+/* Wide screens: step one and step two mirror each other either side of the pause.
+   The milestone sits at the end of the first line, with its label above the line. */
+@media (min-width: 901px) {
+  .pause-line { grid-template-columns: 1fr minmax(340px, 1.15fr) 1fr; padding-top: 64px; }
+  .pause-seg { padding: 56px 40px 0 0; }
+  .pause-two { padding: 56px 0 0 40px; }
+  .pause-one, .pause-mile { grid-column: 1; grid-row: 1; }
+  .pause-panel { grid-column: 2; grid-row: 1; margin: -64px 36px 0; }
+  .pause-two { grid-column: 3; grid-row: 1; }
+  .pause-mile { justify-self: end; width: 0; height: 0; padding: 0; text-align: right; }
+  .pause-mile::before { display: none; }
+  .pause-mile-title, .pause-mile-sub { position: absolute; right: 26px; white-space: nowrap; margin: 0; }
+  .pause-mile-title { bottom: 30px; }
+  .pause-mile-sub { bottom: 12px; }
+}
 
 .quote { margin: clamp(120px, 12vw, 180px) 0 0; display: grid; grid-template-columns: repeat(12, 1fr); column-gap: 24px; }
 .quote blockquote { grid-column: 3 / span 8; margin: 0; }
@@ -841,7 +858,10 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   .pause-glyph { height: 80px; gap: 14px; margin-bottom: 22px; }
   .pause-glyph span { width: 15px; }
   .js .pause-one .pause-track, .js .pause-mile::before, .js .pause-two .pause-track { transform: scaleY(0); }
-  .js .pause-panel { clip-path: inset(50% 0 50% 0); }
+  .js .pause-panel { clip-path: inset(50% 0 50% 0); transition-delay: .5s, .5s; }
+  .js .pause-mile::before { transition-delay: .25s; }
+  .js .pause-mile > * { transition-delay: .35s, .35s; }
+  .js .pause-two, .js .pause-two .pause-track { transition-delay: 1s; }
   .quote { grid-template-columns: 1fr; }
   .quote blockquote, .quote figcaption { grid-column: 1; }
   .quote blockquote p { text-indent: 0; }
