@@ -1,5 +1,714 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="robots" content="noindex, nofollow"><title>Continuum Planning Partners · Review draft</title>
-<style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#F7F8F4;color:#10201C;font:16px/1.5 Georgia,serif}p{color:#66736E;font-family:system-ui,sans-serif}</style></head>
-<body><main style="text-align:center;padding:24px"><h1 style="font-weight:300;font-size:40px;margin:0 0 8px">Continuum Planning Partners</h1><p>The review draft is being published. Please check back in a few minutes.</p></main></body></html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>Continuum Planning Partners · One planning view before the move</title>
+<meta name="description" content="Continuum Planning Partners brings your CPA, attorney, insurance, banking and investment advice into one planning view, so your family can see where a decision leads before you make it.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=Schibsted+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header" data-header>
+  <div class="wrap header-inner">
+    <a class="wordmark" href="#top" aria-label="Continuum Planning Partners, home">
+      <span class="wm-name">Continuum</span>
+      <span class="wm-sub">Planning Partners</span>
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="#pieces">The problem</a></li>
+        <li><a href="#approach">Approach</a></li>
+        <li><a href="#fit">Who it’s for</a></li>
+        <li><a href="#team">The team</a></li>
+      </ul>
+    </nav>
+    <a class="nav-cta" href="#call">Book a Clarity Call</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- Hero: full-bleed media, headline bottom left, action bottom right -->
+  <section class="hero" id="top" aria-labelledby="hero-title">
+    <div class="hero-media" data-parallax="0.12" aria-hidden="true">
+      <img class="hero-poster" src="img/hero-horsefarm.jpg" alt="" width="1280" height="720" fetchpriority="high">
+      <!--
+        Background video slot. To add the loop: put a silent, compressed MP4 (and optionally WebM)
+        in a <source> below. Keep it 10 to 20 seconds, no audio track. The poster image stays as
+        the fallback and is shown instead of the video under prefers-reduced-motion.
+        Example: <source src="video/hero-loop.mp4" type="video/mp4">
+      -->
+      <video class="hero-video" muted loop playsinline autoplay preload="none" poster="img/hero-horsefarm.jpg" data-hero-video>
+        <!-- [Hero background video placeholder: source to come] -->
+      </video>
+    </div>
+    <div class="hero-shade" aria-hidden="true"></div>
+
+    <div class="wrap hero-content">
+      <div class="hero-copy">
+        <p class="eyebrow eyebrow-light reveal">Planning for families before a major decision</p>
+        <h1 id="hero-title" class="hero-title reveal">
+          <span class="l">Before the move</span>
+          <span class="l turn">you can’t take back.</span>
+        </h1>
+      </div>
+      <div class="hero-aside reveal">
+        <p>Your CPA, attorney, insurance agent, banker and investment advisor each see one piece. Continuum brings every piece into one planning view before your family decides.</p>
+        <a class="btn btn-cobalt" href="#call">Book a Clarity Call <span class="arrow" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+    <p class="wrap hero-foot"><span>Brentwood, Tennessee</span><span>Families nationwide</span><span>Most by referral</span></p>
+  </section>
+
+  <!-- The decision: horizontal rail of image panels -->
+  <section class="decision" id="decision" aria-labelledby="decision-title">
+    <div class="wrap decision-head">
+      <div>
+        <p class="runhead reveal">The decision in front of you</p>
+        <h2 id="decision-title" class="h2 reveal">It usually starts with one decision that’s hard to undo.</h2>
+      </div>
+      <div class="decision-side reveal">
+        <p class="body-l">Each one touches taxes, entities, coverage, lending and investments at the same time. Most families meet it while they’re still building, with the most to gain and the most to lose.</p>
+        <div class="rail-controls">
+          <button class="rail-btn" type="button" data-rail-prev="decisions" aria-label="Previous decision">←</button>
+          <span class="rail-progress" aria-hidden="true"><span data-rail-bar="decisions"></span></span>
+          <button class="rail-btn" type="button" data-rail-next="decisions" aria-label="Next decision">→</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="rail" data-rail="decisions" tabindex="0" role="region" aria-label="Four decisions. Scroll sideways or use the arrow buttons.">
+      <ol class="rail-track">
+        <li class="panel">
+          <figure class="photo wipe reveal" data-parallax-inner>
+            <img src="img/shop.jpg" alt="An empty family workshop at dusk, tools hung neatly on the wall" width="1152" height="864">
+          </figure>
+          <div class="panel-card">
+            <span class="panel-num">01</span>
+            <h3 class="panel-title">Selling the business.</h3>
+            <p>What you net, what you owe, and what you live on after.</p>
+          </div>
+        </li>
+        <li class="panel">
+          <figure class="photo wipe reveal">
+            <img src="img/hero-stonewall.jpg" alt="An old dry-stone wall crossing rolling Tennessee pasture in morning mist" width="1280" height="720">
+          </figure>
+          <div class="panel-card">
+            <span class="panel-num">02</span>
+            <h3 class="panel-title">Buying the land.</h3>
+            <p>Cash, debt, and what it ties up for years.</p>
+          </div>
+        </li>
+        <li class="panel">
+          <figure class="photo wipe reveal">
+            <img src="img/hero-harpeth.jpg" alt="A calm river bending beneath a limestone bluff in early morning mist" width="1280" height="720">
+          </figure>
+          <div class="panel-card">
+            <span class="panel-num">03</span>
+            <h3 class="panel-title">A liquidity event.</h3>
+            <p>The money arrives at once. The decisions around it don’t.</p>
+          </div>
+        </li>
+        <li class="panel">
+          <figure class="photo wipe reveal">
+            <img src="img/kids.jpg" alt="An empty swing and a child’s bicycle beneath an old oak near a farmhouse" width="864" height="1152">
+          </figure>
+          <div class="panel-card">
+            <span class="panel-num">04</span>
+            <h3 class="panel-title">Helping the kids.</h3>
+            <p>Generous now, without shortchanging later.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Blind spots: the vellum sheets -->
+  <section class="pieces" id="pieces" aria-labelledby="pieces-title">
+    <div class="wrap pieces-head">
+      <p class="runhead runhead-light reveal">Why separate advice leaves gaps</p>
+      <h2 id="pieces-title" class="h2 h2-light reveal">Five good advisors. <em>Five separate drawings.</em></h2>
+      <p class="body-l light-muted reveal">Each professional works from their own sheet, and each sheet is accurate. But a sale changes the tax picture, which changes the trust, which changes the coverage, which changes the loan. The blind spots live between the sheets, where no one is assigned to look.</p>
+    </div>
+
+    <!--
+      Mark source for the sheets. This is a PLACEHOLDER mark: "CPP" drawn as one monoline path
+      (three subpaths: C, P, P). main.js measures the whole path and cuts it into five equal
+      lengths, one per sheet, so no sheet holds a whole letter. To drop in the real logo, either
+      replace the d attribute below (keep the 640 x 440 viewBox), or replace the data-split path
+      with five <path data-piece> elements in order (CPA, Attorney, Insurance, Banker, Advisor).
+      The data-accent element is added to the last sheet only. See the build notes.
+    -->
+    <svg class="mark-source" data-mark-source viewBox="0 0 640 440" aria-hidden="true" focusable="false">
+      <path data-split="5" d="M278.3 149.3 A110 110 0 1 0 278.3 290.7 M316 230 H356 A60 60 0 0 0 356 110 H316 V330 M456 230 H496 A60 60 0 0 0 496 110 H456 V330"/>
+      <circle data-accent cx="456" cy="330" r="10"/>
+    </svg>
+
+    <div class="stage" data-stage aria-hidden="true">
+      <div class="sheets">
+        <div class="sheet" style="--i:0"><span class="tab">CPA</span><svg viewBox="0 0 640 440" data-slot></svg><p class="sees">Sees this year’s return.</p></div>
+        <div class="sheet" style="--i:1"><span class="tab">Attorney</span><svg viewBox="0 0 640 440" data-slot></svg><p class="sees">Sees the documents.</p></div>
+        <div class="sheet" style="--i:2"><span class="tab">Insurance</span><svg viewBox="0 0 640 440" data-slot></svg><p class="sees">Sees the policy.</p></div>
+        <div class="sheet" style="--i:3"><span class="tab">Banker</span><svg viewBox="0 0 640 440" data-slot></svg><p class="sees">Sees the loan.</p></div>
+        <div class="sheet" style="--i:4"><span class="tab">Advisor</span><svg viewBox="0 0 640 440" data-slot></svg><p class="sees">Sees the portfolio.</p></div>
+      </div>
+    </div>
+
+    <div class="wrap pieces-foot">
+      <ul class="sees-list">
+        <li><b>CPA</b> sees this year’s return.</li>
+        <li><b>Attorney</b> sees the documents.</li>
+        <li><b>Insurance agent</b> sees the policy.</li>
+        <li><b>Banker</b> sees the loan.</li>
+        <li><b>Investment advisor</b> sees the portfolio.</li>
+      </ul>
+      <p class="stack-caption">Laid over one another, the five fragments become <em>one mark.</em> That is the planning view Continuum builds, and every advisor can work from it.</p>
+      <p class="mark-note"><span class="ph ph-dark">[Placeholder mark: final logo to come]</span></p>
+    </div>
+  </section>
+
+  <!-- Signs: sticky split -->
+  <section class="signs" id="signs" aria-labelledby="signs-title">
+    <div class="wrap signs-grid">
+      <div class="signs-pin">
+        <p class="runhead reveal">Signs your family needs one view</p>
+        <h2 id="signs-title" class="h2 reveal">You may already be the only one holding the whole picture.</h2>
+        <figure class="signs-photo frame frame-pine reveal">
+          <div class="photo"><img src="img/table.jpg" alt="Separate stacks of paperwork from different advisors spread across a kitchen table in the evening" width="1152" height="864"></div>
+        </figure>
+      </div>
+      <ol class="signs-list" data-signs>
+        <li><span class="s-num">i.</span><div><p class="s-title">Your advisors have never been in the same conversation.</p><p class="s-desc">Each one hears your plans secondhand, if at all.</p></div></li>
+        <li><span class="s-num">ii.</span><div><p class="s-title">Good advice from one quietly contradicts another.</p><p class="s-desc">A tax move that works against the estate plan. Coverage that no longer fits the balance sheet.</p></div></li>
+        <li><span class="s-num">iii.</span><div><p class="s-title">The decision has a date on it.</p><p class="s-desc">A buyer, a closing, a deadline. Someone else set the timeline.</p></div></li>
+        <li><span class="s-num">iv.</span><div><p class="s-title">You can’t say what the move does to the next ten years.</p><p class="s-desc">You know it’s significant. You can’t yet see how.</p></div></li>
+        <li><span class="s-num">v.</span><div><p class="s-title">Your plan was built for a smaller life.</p><p class="s-desc">The documents still describe the family you were.</p></div></li>
+        <li><span class="s-num">vi.</span><div><p class="s-title">You’re the one translating between everyone.</p><p class="s-desc">Usually in the evenings, from memory.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Story video band -->
+  <section class="story" id="story" aria-labelledby="story-title">
+    <div class="story-media" data-parallax="0.1" aria-hidden="true">
+      <img src="img/story-poster.jpg" alt="" width="1280" height="720">
+    </div>
+    <div class="story-shade" aria-hidden="true"></div>
+    <div class="wrap story-inner">
+      <div class="story-copy">
+        <p class="runhead runhead-light reveal">The story</p>
+        <h2 id="story-title" class="h2 h2-light reveal">What it looks like to decide with <em>the whole picture.</em></h2>
+        <p class="reveal"><span class="ph ph-dark">[Story video placeholder]</span></p>
+      </div>
+      <!--
+        Story video. Set ONE of:
+          data-video-src="video/story.mp4"            (self-hosted MP4)
+          data-video-embed="https://player.vimeo.com/video/ID"   (Vimeo or Mux embed URL)
+        Captions for self-hosted video: data-video-captions="video/story.en.vtt"
+      -->
+      <button class="play" type="button" data-video-open
+        data-video-title="The Continuum story"
+        data-video-src=""
+        data-video-embed=""
+        data-video-captions="">
+        <span class="play-disc" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l11-6.5z"/></svg></span>
+        <span class="play-label"><span class="play-main">Play the film</span><span class="play-meta">Runtime <span class="ph ph-dark">[0:00]</span></span></span>
+      </button>
+    </div>
+  </section>
+
+  <!-- How Continuum helps -->
+  <section class="approach" id="approach" aria-labelledby="approach-title">
+    <div class="wrap">
+      <div class="approach-head">
+        <p class="runhead reveal">How Continuum helps</p>
+        <h2 id="approach-title" class="h2 reveal">One working model of your family, built <em>before</em> you move.</h2>
+      </div>
+      <div class="proforma">
+        <figure class="proforma-figure frame frame-pine">
+          <div class="photo wipe reveal"><img src="img/hero-field.jpg" alt="A fence line running across a misted Tennessee pasture at first light" width="864" height="1152"></div>
+        </figure>
+        <article class="vellum reveal" data-parallax="-0.06" aria-labelledby="proforma-title">
+          <p class="vellum-label">At the center of the work</p>
+          <h3 id="proforma-title" class="h3">The Personal Proforma <span class="ph">[CONFIRM name]</span></h3>
+          <p>A working model of where your family stands today and where a specific decision would take it. Sell now or later. Buy the land outright or finance it. Help the kids this year or over time.</p>
+          <p>You see the paths side by side, in plain numbers, before anything is signed.</p>
+        </article>
+      </div>
+      <ol class="pledges">
+        <li class="reveal"><span class="p-num">a.</span><h3 class="p-title">One picture every advisor can work from.</h3><p>Your CPA, attorney, insurance agent, banker and investment advisor keep doing what they do well, from the same page.</p></li>
+        <li class="reveal"><span class="p-num">b.</span><h3 class="p-title">Direct access to the planners.</h3><p>The people building your model are the people you talk to. You won’t be passed along.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Planning comes first, part one: the joined bar comes apart into two steps -->
+  <section class="split" id="decouple" aria-labelledby="decouple-title">
+    <div class="wrap">
+      <div class="split-head">
+        <p class="runhead reveal">Planning comes first</p>
+        <h2 id="decouple-title" class="h2 reveal">The plan comes first, <em>and stands on its own.</em></h2>
+        <p class="body-l reveal">The strategy is the foundation, so it is built, paid for with its own planning fee and finished before anything is implemented. Then, for most families, Continuum carries out the plan alongside their CPA and attorney. The plan can be implemented with the advisor of your choosing, and specific products or services may involve commissions or fees outside the planning fee. <span class="ph">[CONFIRM with compliance]</span></p>
+      </div>
+
+      <div class="split-bar" data-split-bar data-draw>
+        <div class="split-block split-one reveal">
+          <p class="split-step">Step one</p>
+          <h3 class="split-title">The plan</h3>
+          <p class="split-kp"><strong>Planning:</strong> the foundation, built and paid for with its own planning fee, and finished before anything is implemented. <span class="ph">[CONFIRM with compliance]</span></p>
+          <p class="split-foot">Finished, and yours to keep.</p>
+        </div>
+        <div class="split-gap reveal">
+          <p class="split-gap-label">Separate, on purpose.</p>
+        </div>
+        <div class="split-block split-two reveal">
+          <p class="split-step">Step two</p>
+          <h3 class="split-title">Implementation</h3>
+          <p class="split-kp"><strong>Implementation:</strong> a separate step, carried out with the advisor of your choosing. For most families, that is Continuum, alongside their CPA and attorney. <span class="ph">[CONFIRM with compliance]</span></p>
+          <p class="split-foot">We show you the steps in order of priority and help you carry them out.</p>
+        </div>
+        <p class="split-joined" aria-hidden="true">Strategy + implementation</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Planning comes first, part two: the pause between the steps -->
+  <section class="pause" id="pause" aria-labelledby="pause-title">
+    <div class="wrap">
+      <div class="pause-head">
+        <p class="runhead reveal">Between the two steps</p>
+        <h2 id="pause-title" class="h2 reveal">A pause, <em>built in.</em></h2>
+        <p class="body-l reveal">Step one ends with a finished plan in your hands. Then the work stops, on purpose, so your family can read it and question it before anything is put in motion.</p>
+      </div>
+
+      <ol class="pause-line reveal">
+        <li class="pause-seg pause-one">
+          <span class="pause-track" aria-hidden="true"></span>
+          <p class="split-step">Step one</p>
+          <h3 class="split-title">The plan</h3>
+          <p class="pause-text">The finished strategy, with the steps set out in order of priority.</p>
+        </li>
+        <li class="pause-mile">
+          <span class="pause-dot" aria-hidden="true"></span>
+          <p class="pause-mile-title">Plan delivered</p>
+          <p class="pause-mile-sub">Yours to keep</p>
+        </li>
+        <li class="pause-panel">
+          <span class="pause-glyph" aria-hidden="true"><span></span><span></span></span>
+          <p class="pause-label">The pause</p>
+          <p class="pause-title">Nothing moves until you decide.</p>
+          <p class="pause-body">Take the plan home. Read it with your family, your CPA and your attorney. Implementation starts when you say so. <span class="ph">[CONFIRM with compliance]</span></p>
+        </li>
+        <li class="pause-seg pause-two">
+          <span class="pause-track" aria-hidden="true"></span>
+          <p class="split-step">Step two</p>
+          <h3 class="split-title">Implementation</h3>
+          <p class="pause-text">Most families have Continuum carry it out, alongside their CPA and attorney. The plan works with the advisor of your choosing. <span class="ph">[CONFIRM with compliance]</span></p>
+        </li>
+      </ol>
+
+      <figure class="quote reveal">
+        <blockquote><p>“A plan should be finished before anyone asks what to buy.”</p></blockquote>
+        <figcaption>Abby Spaulding, CFP®, Managing Partner <span class="ph">[CONFIRM Abby’s exact phrasing. Draft line for layout only.]</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Who it's for: photo collage -->
+  <section class="fit" id="fit" aria-labelledby="fit-title">
+    <div class="wrap fit-grid">
+      <div class="collage" aria-hidden="false">
+        <figure class="collage-main photo wipe reveal" data-parallax="0.05">
+          <img src="img/lane.jpg" alt="A father and his adult daughter walking down a fenced farm lane" width="864" height="1152">
+        </figure>
+        <figure class="collage-inset photo wipe reveal" data-parallax="-0.08">
+          <!-- Generated stand-in. Replace with a licensed photograph of Nashville. -->
+          <img src="img/nashville-bridge.jpg" alt="A steel truss footbridge in morning fog, with the Nashville skyline faint beyond" width="864" height="1152">
+        </figure>
+        <span class="collage-block" aria-hidden="true" data-parallax="0.12"></span>
+      </div>
+      <div class="fit-body">
+        <p class="runhead reveal">Who it’s for</p>
+        <h2 id="fit-title" class="h2 reveal">Built for a particular family, at a particular moment.</h2>
+        <h3 class="fit-label reveal">Likely a good fit</h3>
+        <ul class="fit-list reveal">
+          <li>Families still building wealth, with a decision ahead that’s hard to reverse.</li>
+          <li>People who already have good advisors and want them working from the same page.</li>
+          <li>Owners weighing a sale, a transition or a large purchase.</li>
+          <li>Parents who want to help their children without guessing at the cost.</li>
+        </ul>
+      </div>
+      <div class="notfit reveal">
+        <h3 class="fit-label">Likely not the right fit</h3>
+        <ul>
+          <li>Anyone shopping for a product first. We start with the plan.</li>
+          <li>Someone looking for a quick opinion on a single investment.</li>
+          <li>Families who would rather not see the whole picture.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- How to begin: staircase -->
+  <section class="begin" id="begin" aria-labelledby="begin-title">
+    <div class="wrap begin-grid">
+      <div>
+        <p class="runhead reveal">How to begin</p>
+        <h2 id="begin-title" class="h2 reveal">Three steps, <em>one direction.</em></h2>
+      </div>
+      <div class="stair-wrap" data-stair data-draw>
+        <svg class="stair-line" aria-hidden="true" focusable="false">
+          <path class="stair-track"/>
+          <path class="stair-drawn"/>
+          <circle class="stair-pulse" r="9"/>
+        </svg>
+        <ol class="stair">
+          <li class="step reveal" style="--n:0">
+            <p class="step-title"><span class="step-dot" aria-hidden="true"></span>Start with a Clarity Call.</p>
+            <p class="step-desc">Tell us about the decision in front of you. We’ll tell you plainly whether we can help. <span class="ph">[CONFIRM call length and format]</span></p>
+          </li>
+          <li class="step reveal" style="--n:1">
+            <p class="step-title"><span class="step-dot" aria-hidden="true"></span>Then, a Personal Proforma.</p>
+            <p class="step-desc">With your permission, we gather what your advisors already have and build one model of where you stand and where the move would take you.</p>
+          </li>
+          <li class="step reveal" style="--n:2">
+            <p class="step-title"><span class="step-dot" aria-hidden="true"></span>Then, one picture for everyone.</p>
+            <p class="step-desc">Your advisors work from the same view, and your family makes the decision with all of it in sight.</p>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team and quiet proof -->
+  <section class="team" id="team" aria-labelledby="team-title">
+    <div class="wrap">
+      <div class="team-head">
+        <p class="runhead reveal">The team</p>
+        <h2 id="team-title" class="h2 reveal">Small on purpose. <em>Close to the work.</em></h2>
+        <p class="body-l reveal">You work directly with the planners building your model. <span class="ph">[Team introduction to come]</span></p>
+        <figure class="team-office frame frame-pine">
+          <!-- Generated stand-in. Replace with a photograph of the actual Brentwood office. -->
+          <div class="photo wipe reveal"><img src="img/office-view.jpg" alt="A quiet office with an oak table, the Nashville skyline through the window at dusk" width="1152" height="864"></div>
+        </figure>
+      </div>
+
+      <div class="team-bar">
+        <p class="team-count">Nine planners, four offices <span class="ph">[CONFIRM current roster and offices]</span></p>
+        <div class="rail-controls">
+          <button class="rail-btn" type="button" data-rail-prev="team" aria-label="Previous team members">←</button>
+          <span class="rail-progress" aria-hidden="true"><span data-rail-bar="team"></span></span>
+          <button class="rail-btn" type="button" data-rail-next="team" aria-label="Next team members">→</button>
+        </div>
+      </div>
+    </div>
+
+    <!--
+      Team portraits. For each card set:
+        data-preview="video/name-preview.mp4"   short silent loop shown on hover (desktop) or tap (mobile)
+        data-video-src / data-video-embed / data-video-captions on the button for the full clip
+      Replace the placeholder <img> with the real portrait. Add or remove cards freely; the row scrolls.
+    -->
+    <div class="rail team-rail" data-rail="team" tabindex="0" role="region" aria-label="The team. Scroll sideways or use the arrow buttons.">
+      <ul class="rail-track team-track">
+        <li class="member reveal" data-member data-preview="">
+          <div class="portrait">
+            <!-- <img src="img/team-abby-spaulding.jpg" alt="Portrait of Abby Spaulding"> -->
+            <video class="portrait-preview" muted loop playsinline preload="none" aria-hidden="true"></video>
+            <span class="portrait-ph"><span class="ph ph-dark">[Portrait placeholder]</span></span>
+            <span class="portrait-letter" aria-hidden="true">AS</span>
+          </div>
+          <div class="member-info">
+            <p class="member-office">Nashville office</p>
+            <p class="member-name">Abby Spaulding, CFP®</p>
+            <p class="member-role">Managing Partner &amp; Financial Planner</p>
+            <button class="member-play" type="button" data-video-open data-video-title="Meet Abby Spaulding" data-video-src="" data-video-embed="" data-video-captions="">Watch the introduction<span class="sr-only"> from Abby Spaulding</span></button>
+          </div>
+        </li>
+        <li class="member reveal" data-member data-preview="">
+          <div class="portrait">
+            <!-- <img src="img/team-andy-faught.jpg" alt="Portrait of Andy Faught"> -->
+            <video class="portrait-preview" muted loop playsinline preload="none" aria-hidden="true"></video>
+            <span class="portrait-ph"><span class="ph ph-dark">[Portrait placeholder]</span></span>
+            <span class="portrait-letter" aria-hidden="true">AF</span>
+          </div>
+          <div class="member-info">
+            <p class="member-office">Nashville office</p>
+            <p class="member-name">Andy Faught, CFA, CFP®</p>
+            <p class="member-role">Managing Partner &amp; Financial Planner</p>
+            <button class="member-play" type="button" data-video-open data-video-title="Meet Andy Faught" data-video-src="" data-video-embed="" data-video-captions="">Watch the introduction<span class="sr-only"> from Andy Faught</span></button>
+          </div>
+        </li>
+        <li class="member reveal" data-member data-preview="">
+          <div class="portrait">
+            <!-- <img src="img/team-julie-mccormick.jpg" alt="Portrait of Julie McCormick"> -->
+            <video class="portrait-preview" muted loop playsinline preload="none" aria-hidden="true"></video>
+            <span class="portrait-ph"><span class="ph ph-dark">[Portrait placeholder]</span></span>
+            <span class="portrait-letter" aria-hidden="true">JM</span>
+          </div>
+          <div class="member-info">
+            <p class="member-office">Nashville office</p>
+            <p class="member-name">Julie McCormick, CFP®</p>
+            <p class="member-role">Financial Planner</p>
+            <button class="member-play" type="button" data-video-open data-video-title="Meet Julie McCormick" data-video-src="" data-video-embed="" data-video-captions="">Watch the introduction<span class="sr-only"> from Julie McCormick</span></button>
+          </div>
+        </li>
+        <li class="member reveal" data-member data-preview="">
+          <div class="portrait">
+            <!-- <img src="img/team-greg-sirko.jpg" alt="Portrait of Greg Sirko"> -->
+            <video class="portrait-preview" muted loop playsinline preload="none" aria-hidden="true"></video>
+            <span class="portrait-ph"><span class="ph ph-dark">[Portrait placeholder]</span></span>
+            <span class="portrait-letter" aria-hidden="true">GS</span>
+          </div>
+          <div class="member-info">
+            <p class="member-office">Nashville office</p>
+            <p class="member-name">Greg Sirko, CFP®</p>
+            <p class="member-role">Financial Planner</p>
+            <button class="member-play" type="button" data-video-open data-video-title="Meet Greg Sirko" data-video-src="" data-video-embed="" data-video-captions="">Watch the introduction<span class="sr-only"> from Greg Sirko</span></button>
+          </div>
+        </li>
+        <li class="member reveal" data-member data-preview="">
+          <div class="portrait">
+            <!-- <img src="img/team-richard-a-hamilton.jpg" alt="Portrait of Richard A. Hamilton"> -->
+            <video class="portrait-preview" muted loop playsinline preload="none" aria-hidden="true"></video>
+            <span class="portrait-ph"><span class="ph ph-dark">[Portrait placeholder]</span></span>
+            <span class="portrait-letter" aria-hidden="true">RH</span>
+          </div>
+          <div class="member-info">
+            <p class="member-office">Nashville office</p>
+            <p class="member-name">Richard A. Hamilton, CFP®, ChFC</p>
+            <p class="member-role">Financial Planner</p>
+            <button class="member-play" type="button" data-video-open data-video-title="Meet Richard A. Hamilton" data-video-src="" data-video-embed="" data-video-captions="">Watch the introduction<span class="sr-only"> from Richard A. Hamilton</span></button>
+          </div>
+        </li>
+        <li class="member reveal" data-member data-preview="">
+          <div class="portrait">
+            <!-- <img src="img/team-jon-leonard.jpg" alt="Portrait of Jon Leonard"> -->
+            <video class="portrait-preview" muted loop playsinline preload="none" aria-hidden="true"></video>
+            <span class="portrait-ph"><span class="ph ph-dark">[Portrait placeholder]</span></span>
+            <span class="portrait-letter" aria-hidden="true">JL</span>
+          </div>
+          <div class="member-info">
+            <p class="member-office">Knoxville office</p>
+            <p class="member-name">Jon Leonard, CFP®</p>
+            <p class="member-role">Financial Planner</p>
+            <button class="member-play" type="button" data-video-open data-video-title="Meet Jon Leonard" data-video-src="" data-video-embed="" data-video-captions="">Watch the introduction<span class="sr-only"> from Jon Leonard</span></button>
+          </div>
+        </li>
+        <li class="member reveal" data-member data-preview="">
+          <div class="portrait">
+            <!-- <img src="img/team-bryan-byrd.jpg" alt="Portrait of Bryan Byrd"> -->
+            <video class="portrait-preview" muted loop playsinline preload="none" aria-hidden="true"></video>
+            <span class="portrait-ph"><span class="ph ph-dark">[Portrait placeholder]</span></span>
+            <span class="portrait-letter" aria-hidden="true">BB</span>
+          </div>
+          <div class="member-info">
+            <p class="member-office">Johnson City office</p>
+            <p class="member-name">Bryan Byrd</p>
+            <p class="member-role">Financial Planner</p>
+            <button class="member-play" type="button" data-video-open data-video-title="Meet Bryan Byrd" data-video-src="" data-video-embed="" data-video-captions="">Watch the introduction<span class="sr-only"> from Bryan Byrd</span></button>
+          </div>
+        </li>
+        <li class="member reveal" data-member data-preview="">
+          <div class="portrait">
+            <!-- <img src="img/team-brad-fair.jpg" alt="Portrait of Brad Fair"> -->
+            <video class="portrait-preview" muted loop playsinline preload="none" aria-hidden="true"></video>
+            <span class="portrait-ph"><span class="ph ph-dark">[Portrait placeholder]</span></span>
+            <span class="portrait-letter" aria-hidden="true">BF</span>
+          </div>
+          <div class="member-info">
+            <p class="member-office">Tupelo office</p>
+            <p class="member-name">Brad Fair</p>
+            <p class="member-role">Managing Partner &amp; Financial Planner</p>
+            <button class="member-play" type="button" data-video-open data-video-title="Meet Brad Fair" data-video-src="" data-video-embed="" data-video-captions="">Watch the introduction<span class="sr-only"> from Brad Fair</span></button>
+          </div>
+        </li>
+        <li class="member reveal" data-member data-preview="">
+          <div class="portrait">
+            <!-- <img src="img/team-darwin-beard.jpg" alt="Portrait of Darwin Beard"> -->
+            <video class="portrait-preview" muted loop playsinline preload="none" aria-hidden="true"></video>
+            <span class="portrait-ph"><span class="ph ph-dark">[Portrait placeholder]</span></span>
+            <span class="portrait-letter" aria-hidden="true">DB</span>
+          </div>
+          <div class="member-info">
+            <p class="member-office">Tupelo office</p>
+            <p class="member-name">Darwin Beard</p>
+            <p class="member-role">Financial Planner</p>
+            <button class="member-play" type="button" data-video-open data-video-title="Meet Darwin Beard" data-video-src="" data-video-embed="" data-video-captions="">Watch the introduction<span class="sr-only"> from Darwin Beard</span></button>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="wrap locations" id="locations" role="region" aria-labelledby="locations-title" data-locations>
+      <div class="loc-head">
+        <p class="runhead reveal">Our locations</p>
+        <h2 id="locations-title" class="h2 reveal">Where our planners work.</h2>
+        <p class="body-l reveal">Four offices across Tennessee and northern Mississippi. Most of the team works from Brentwood.</p>
+      </div>
+
+      <div class="place">
+        <figure class="place-figure frame">
+          <!-- Generated stand-in. Replace with a licensed photograph of Nashville. -->
+          <div class="photo wipe reveal" data-parallax-inner><img src="img/nashville-skyline.jpg" alt="The Nashville skyline at blue hour, reflected in the Cumberland River" width="1280" height="720"></div>
+        </figure>
+        <div class="place-card reveal" data-parallax="-0.05">
+          <p class="vellum-label">Nashville office</p>
+          <h3 class="h3">Brentwood, just south of Nashville.</h3>
+          <p class="place-addr">10 Cadillac Dr., Suite 390, Brentwood, TN 37027. <a href="tel:+16153096464">(615) 309-6464</a></p>
+          <dl class="facts">
+            <div><dt>The team</dt><dd>Nine planners in four offices.</dd></div>
+            <div><dt>Who we serve</dt><dd>Families across the country.</dd></div>
+            <div><dt>How families find us</dt><dd>Often through a referral.</dd></div>
+            <div><dt>Who you talk to</dt><dd>The planners doing the work.</dd></div>
+          </dl>
+        </div>
+      </div>
+
+      <div class="loc-grid">
+        <div class="loc-map reveal">
+          <!-- map:start -->
+          <div class="map" style="aspect-ratio:1000 / 488">
+            <svg class="map-art" viewBox="0 0 1000 488" role="img" aria-label="Map of Tennessee and northern Mississippi showing offices in Brentwood, Knoxville, Johnson City and Tupelo">
+              <path class="map-land" d="M0,465L0.5,464.9L1.7,462.5L1.3,454.4L6.5,449.1L5.9,446.6L2,447.8L0.7,452.2L0,451L0,434.7L0,434.7L6,428.6L4.3,425.1L0.1,432.7L0,432.8L0,397.4L0,397.4L5.5,399.9L10,398.1L7.3,392.6L2.4,393.9L0,391.9L0,384.6L0,384.6L8.4,384.8L11.3,386.9L15.2,383.4L9.4,380.4L7.1,374.3L14.2,366.3L6.1,362.2L7.4,359.2L13.5,357L15.1,361.7L19.3,360.2L16.9,355.2L25.9,355L29.1,348.6L28.1,346L24,346.1L21,340.5L25.6,337.2L31.3,341L36.3,338.3L35.7,335.5L28.3,335.3L23.3,330.5L26.8,327.5L32.5,332.4L34.3,324.8L41.4,323.5L44.2,320.4L41.4,315.5L43.4,312.7L50.4,312.9L49.1,318.6L52.8,318.9L53.1,312.1L62.6,306.4L60.7,297.4L65.8,292.1L65.5,289.2L61.4,282.5L61.7,275.6L65.5,273.5L64.9,278.8L68.8,280.9L74.2,275.7L73.6,272.3L66.3,271.8L64.2,267.4L66.9,266L66.3,262.3L70.1,259.5L69.1,265.6L70.8,269.3L76,267.5L74.2,259.7L76.1,257.1L73.4,252.2L74.2,249.1L78.3,249.5L79.5,255.9L91.1,251.7L97.9,247.2L98.1,242.4L92.1,236.2L176.2,239.5L233.5,241L307.8,242.6L312.4,251.8L318.2,255.7L313.1,294.5L304.8,363.4L302.2,380.6L289,488L1.1,488L1.1,488L0,485.1L0,465ZM155.2,112.8L159.6,110.5L161,102.5L169.1,98.4L169,91.9L159.1,83.6L160.2,81.4L171,83.4L176.5,82L176.3,79.1L168.8,74.7L168.9,70.7L177.6,70.9L179.5,66.9L176.1,60.5L178.9,53.7L176.8,51.3L182.2,51.6L181.4,54.9L186,55.8L189.1,51.6L201,50.8L231.3,52.4L276.8,53.5L326.2,55.1L328.5,48.3L325.1,32.4L347.1,34.6L346.7,38.4L387.7,38.1L420.9,38.2L473.5,37.2L476,39.5L481.8,37.2L499.4,37.6L529.3,40L549.5,41L584.1,41.6L603.9,39.9L630.6,40.6L649,42.1L678.9,42.8L706.3,42.8L734.8,42.4L764.8,42.5L766.1,40.2L778,40.3L806.2,39.4L808,39.9L864.5,38.1L886.5,37L940.9,34.9L941.9,32.1L969.6,31.4L966.9,34.5L963.9,41.1L965.8,49.6L963.7,51L961.4,58.1L965.4,65.9L959.3,66.2L956.3,63.8L952.4,65.3L945,71.3L934,93.3L929.1,96.5L923.6,96.8L922,91.5L915,90.5L911.9,94.1L907.5,93.8L901.5,96.3L896.2,100.2L891.1,110.4L881.2,117.5L875.7,115.5L877.2,108L873.4,103.8L861.7,111.7L854.9,122.5L849.3,118.8L845.8,122.2L847.1,128.9L838,141.6L829.2,139.9L821.7,143.3L818.9,147.7L813.1,148.3L811.8,152.1L806.1,157.4L802.4,156.8L800.7,159.6L792.7,163.3L788.9,168.8L759.7,170.3L754.3,175.3L748.5,176.3L745.7,181.5L741,183.2L735,190L736.5,194.7L733.3,197.5L735.3,203.6L727.4,210.5L717.1,211.2L715.9,208.4L708,213.7L705.3,243.3L638,244.5L588,245.7L573.6,245.6L551.2,245.2L492.7,244.9L479.1,245.1L444.9,244.7L386.1,242.8L363,242.5L307.8,241L307.8,242.6L233.5,241L176.2,239.5L92.1,236.2L93.4,231L102.5,232.8L106.2,222.2L109.6,219.5L114,221.9L117.7,219.4L112.5,212.9L117,208.5L115,205.3L109.5,204.3L108.2,199.2L114.1,198.4L114.3,193.6L117.8,188.6L112.4,184.7L111.5,189.3L107.2,188.4L108.5,183.5L117.1,176.7L119.7,186.2L124,178.3L120.9,173.7L123,167.5L126.3,166.7L134.1,173L135.3,168.8L132.1,167.6L131.9,161.9L141.6,157.7L140.6,153.6L136.2,155.9L133,153.9L131,146.6L136.7,142.4L139.9,144.7L146.1,142.6L149.6,137.1L153.6,137.1L157.7,133.7L150.6,129.6L154,124.5L162.7,127.2L162.9,122.4L156.5,116.9Z"/>
+              <path class="map-neighbors" d="M573.6,245.6L579.4,280.1L588.3,327.6L595.3,368.2L600.5,399.8L606.4,433.1L615.9,488M705.3,243.3L777.3,241.9L776.9,241.2L829.5,238.6L828.6,246.4L817.4,254L808.2,265.6L808.7,269.4L805.8,272.3L807.1,279.2L818.5,287.6L824.8,288.2L833.6,299.1L842.3,304.3L852.6,302.2L855.6,303.4L858.8,310.2L860.2,317L864.7,320.1L866,325.4L870.3,330.8L870.5,336.3L873.3,343.5L877.9,345.9L881.1,353L886.5,358L891,368.7L894.4,368.7L901.7,376.1L912.8,381.3L924,391.4L925.7,397.9L929.3,402.1L929.8,406.4L934.9,410.3L939.4,410.3L945.9,414L953,423.7L958.8,426.3L960.4,428.8L958,433.5L959.6,437.6L958.3,441.1L969.2,449.5L967.8,452.8L972.9,457L977,456.3L976.5,460.8L979.7,465.5L990.1,470.9L993.5,470.6L999.8,476.6L1000,476.7M966.9,34.5L997.2,34.8L1000,34.7M1000,210.8L981.3,210.9L912.2,210.8L903.9,213.3L901.9,209.2L897.7,214.9L895.1,214L887.9,217.2L885.7,216.8L875.2,222.2L865.2,229L862.5,226.8L829.5,238.6M221.6,0L220.7,3.9L218.4,8.8L214.8,9.6L214.3,13.7L220.3,17.9L219.2,20.8L213.4,20.4L211.9,25L215.6,31.4L212.7,34.4L209.9,42L205.2,43.8L199,35.2L194.2,36.4L189.1,51.6M182.2,51.6L184.5,47.5L182.9,42.2L175.3,41.8L173.8,44.9L176.8,51.3M155.2,112.8L90.2,111L96.5,99.4L105.1,93.5L105.2,91.1L110.8,85.6L116.7,82.8L118,78.2L121.3,77.6L123.6,63.4L115.8,58.4L117,56.8L115.5,49.1L0,44M845.6,0L844.9,1.8L836.1,6L825.7,6.7L820.2,15.5L819.6,20.9L813.9,21.5L802.1,25.6L788.3,31.6L780.7,31.6L769,37.2L766.1,40.2"/>
+              <path class="map-state" d="M766.1,40.2L778,40.3L806.2,39.4L808,39.9L864.5,38.1L886.5,37L940.9,34.9L941.9,32.1L969.6,31.4L966.9,34.5M1.1,488L0,485.1M92.1,236.2L176.2,239.5L233.5,241L307.8,242.6M307.8,242.6L307.8,241L363,242.5L386.1,242.8L444.9,244.7L479.1,245.1L492.7,244.9L551.2,245.2L573.6,245.6M289,488L302.2,380.6L304.8,363.4L313.1,294.5L318.2,255.7L312.4,251.8L307.8,242.6M573.6,245.6L588,245.7L638,244.5L705.3,243.3M705.3,243.3L708,213.7L715.9,208.4L717.1,211.2L727.4,210.5L735.3,203.6L733.3,197.5L736.5,194.7L735,190L741,183.2L745.7,181.5L748.5,176.3L754.3,175.3L759.7,170.3L788.9,168.8L792.7,163.3L800.7,159.6L802.4,156.8L806.1,157.4L811.8,152.1L813.1,148.3L818.9,147.7L821.7,143.3L829.2,139.9L838,141.6L847.1,128.9L845.8,122.2L849.3,118.8L854.9,122.5L861.7,111.7L873.4,103.8L877.2,108L875.7,115.5L881.2,117.5L891.1,110.4L896.2,100.2L901.5,96.3L907.5,93.8L911.9,94.1L915,90.5L922,91.5L923.6,96.8L929.1,96.5L934,93.3L945,71.3L952.4,65.3L956.3,63.8L959.3,66.2L965.4,65.9L961.4,58.1L963.7,51L965.8,49.6L963.9,41.1L966.9,34.5M189.1,51.6L186,55.8L181.4,54.9L182.2,51.6M176.8,51.3L178.9,53.7L176.1,60.5L179.5,66.9L177.6,70.9L168.9,70.7L168.8,74.7L176.3,79.1L176.5,82L171,83.4L160.2,81.4L159.1,83.6L169,91.9L169.1,98.4L161,102.5L159.6,110.5L155.2,112.8M155.2,112.8L156.5,116.9L162.9,122.4L162.7,127.2L154,124.5L150.6,129.6L157.7,133.7L153.6,137.1L149.6,137.1L146.1,142.6L139.9,144.7L136.7,142.4L131,146.6L133,153.9L136.2,155.9L140.6,153.6L141.6,157.7L131.9,161.9L132.1,167.6L135.3,168.8L134.1,173L126.3,166.7L123,167.5L120.9,173.7L124,178.3L119.7,186.2L117.1,176.7L108.5,183.5L107.2,188.4L111.5,189.3L112.4,184.7L117.8,188.6L114.3,193.6L114.1,198.4L108.2,199.2L109.5,204.3L115,205.3L117,208.5L112.5,212.9L117.7,219.4L114,221.9L109.6,219.5L106.2,222.2L102.5,232.8L93.4,231L92.1,236.2M92.1,236.2L98.1,242.4L97.9,247.2L91.1,251.7L79.5,255.9L78.3,249.5L74.2,249.1L73.4,252.2L76.1,257.1L74.2,259.7L76,267.5L70.8,269.3L69.1,265.6L70.1,259.5L66.3,262.3L66.9,266L64.2,267.4L66.3,271.8L73.6,272.3L74.2,275.7L68.8,280.9L64.9,278.8L65.5,273.5L61.7,275.6L61.4,282.5L65.5,289.2L65.8,292.1L60.7,297.4L62.6,306.4L53.1,312.1L52.8,318.9L49.1,318.6L50.4,312.9L43.4,312.7L41.4,315.5L44.2,320.4L41.4,323.5L34.3,324.8L32.5,332.4L26.8,327.5L23.3,330.5L28.3,335.3L35.7,335.5L36.3,338.3L31.3,341L25.6,337.2L21,340.5L24,346.1L28.1,346L29.1,348.6L25.9,355L16.9,355.2L19.3,360.2L15.1,361.7L13.5,357L7.4,359.2L6.1,362.2L14.2,366.3L7.1,374.3L9.4,380.4L15.2,383.4L11.3,386.9L8.4,384.8L0,384.6M0,391.9L2.4,393.9L7.3,392.6L10,398.1L5.5,399.9L0,397.4M0,432.8L0.1,432.7L4.3,425.1L6,428.6L0,434.7M0,451L0.7,452.2L2,447.8L5.9,446.6L6.5,449.1L1.3,454.4L1.7,462.5L0.5,464.9L0,465M766.1,40.2L764.8,42.5L734.8,42.4L706.3,42.8L678.9,42.8L649,42.1L630.6,40.6L603.9,39.9L584.1,41.6L549.5,41L529.3,40L499.4,37.6L481.8,37.2L476,39.5L473.5,37.2L420.9,38.2L387.7,38.1L346.7,38.4L347.1,34.6L325.1,32.4L328.5,48.3L326.2,55.1L276.8,53.5L231.3,52.4L201,50.8L189.1,51.6M182.2,51.6L176.8,51.3"/>
+              <path class="map-line draw" data-office-line="knoxville" pathLength="1" style="--d:0.3s" d="M453.0 114.5 Q593.8 91.3 732.8 124.1"/>
+              <path class="map-line draw" data-office-line="johnson-city" pathLength="1" style="--d:0.55s" d="M453.0 114.5 Q670.7 47.1 897.5 68.7"/>
+              <path class="map-line draw" data-office-line="tupelo" pathLength="1" style="--d:0.8s" d="M453.0 114.5 Q375.6 204.2 254.3 333.8"/>
+            </svg>
+            <span class="map-state-label" style="left:52.30%;top:39.21%">Tennessee</span>
+            <span class="map-state-label" style="left:13.26%;top:85.79%">Mississippi</span>
+            <span class="map-state-label" style="left:44.02%;top:81.97%">Alabama</span>
+            <a class="map-pin pin-leftup is-home" href="#office-nashville" data-office="nashville" style="left:45.30%;top:23.46%"><span class="pin-dot" aria-hidden="true"></span><span class="pin-text"><span class="pin-city">Brentwood</span><span class="pin-count">5 planners</span></span></a>
+            <a class="map-pin pin-below" href="#office-knoxville" data-office="knoxville" style="left:73.28%;top:25.43%"><span class="pin-dot" aria-hidden="true"></span><span class="pin-text"><span class="pin-city">Knoxville</span><span class="pin-count">1 planner</span></span></a>
+            <a class="map-pin pin-jc" href="#office-johnson-city" data-office="johnson-city" style="left:89.75%;top:14.08%"><span class="pin-dot" aria-hidden="true"></span><span class="pin-text"><span class="pin-city">Johnson City</span><span class="pin-count">1 planner</span></span></a>
+            <a class="map-pin pin-left" href="#office-tupelo" data-office="tupelo" style="left:25.43%;top:68.39%"><span class="pin-dot" aria-hidden="true"></span><span class="pin-text"><span class="pin-city">Tupelo</span><span class="pin-count">2 planners</span></span></a>
+          </div>
+          <!-- map:end -->
+        </div>
+        <ul class="offices">
+          <li class="office reveal" id="office-nashville" tabindex="-1" data-office="nashville">
+            <p class="office-count">5 planners</p>
+            <h3 class="office-city">Nashville</h3>
+            <p class="office-addr">10 Cadillac Dr., Suite 390<br>Brentwood, TN 37027<br><a href="tel:+16153096464">(615) 309-6464</a></p>
+            <ul class="office-people">
+              <li><span class="op-name">Abby Spaulding, CFP®</span><span class="op-role">Managing Partner &amp; Financial Planner</span></li>
+              <li><span class="op-name">Andy Faught, CFA, CFP®</span><span class="op-role">Managing Partner &amp; Financial Planner</span></li>
+              <li><span class="op-name">Julie McCormick, CFP®</span><span class="op-role">Financial Planner</span></li>
+              <li><span class="op-name">Greg Sirko, CFP®</span><span class="op-role">Financial Planner</span></li>
+              <li><span class="op-name">Richard A. Hamilton, CFP®, ChFC</span><span class="op-role">Financial Planner</span></li>
+            </ul>
+            <a class="office-dir" href="https://www.google.com/maps/search/?api=1&amp;query=10+Cadillac+Dr+Suite+390+Brentwood+TN+37027" target="_blank" rel="noopener">Directions<span class="sr-only"> to the Nashville office (opens in a new tab)</span></a>
+          </li>
+          <li class="office reveal" id="office-knoxville" tabindex="-1" data-office="knoxville">
+            <p class="office-count">1 planner</p>
+            <h3 class="office-city">Knoxville</h3>
+            <p class="office-addr">1225 Weisgarber Rd., Suite 180<br>Knoxville, TN 37909</p>
+            <ul class="office-people">
+              <li><span class="op-name">Jon Leonard, CFP®</span><span class="op-role">Financial Planner</span></li>
+            </ul>
+            <a class="office-dir" href="https://www.google.com/maps/search/?api=1&amp;query=1225+Weisgarber+Rd+Suite+180+Knoxville+TN+37909" target="_blank" rel="noopener">Directions<span class="sr-only"> to the Knoxville office (opens in a new tab)</span></a>
+          </li>
+          <li class="office reveal" id="office-johnson-city" tabindex="-1" data-office="johnson-city">
+            <p class="office-count">1 planner</p>
+            <h3 class="office-city">Johnson City</h3>
+            <p class="office-addr">308 Sunset Dr., Suite 2<br>Johnson City, TN 37604</p>
+            <ul class="office-people">
+              <li><span class="op-name">Bryan Byrd</span><span class="op-role">Financial Planner</span></li>
+            </ul>
+            <a class="office-dir" href="https://www.google.com/maps/search/?api=1&amp;query=308+Sunset+Dr+Suite+2+Johnson+City+TN+37604" target="_blank" rel="noopener">Directions<span class="sr-only"> to the Johnson City office (opens in a new tab)</span></a>
+          </li>
+          <li class="office reveal" id="office-tupelo" tabindex="-1" data-office="tupelo">
+            <p class="office-count">2 planners</p>
+            <h3 class="office-city">Tupelo</h3>
+            <p class="office-addr">193 Commerce St., Suite 102<br>Tupelo, MS 38804<br><a href="tel:+16624321166">(662) 432-1166</a></p>
+            <ul class="office-people">
+              <li><span class="op-name">Brad Fair</span><span class="op-role">Managing Partner &amp; Financial Planner</span></li>
+              <li><span class="op-name">Darwin Beard</span><span class="op-role">Financial Planner</span></li>
+            </ul>
+            <a class="office-dir" href="https://www.google.com/maps/search/?api=1&amp;query=193+Commerce+St+Suite+102+Tupelo+MS+38804" target="_blank" rel="noopener">Directions<span class="sr-only"> to the Tupelo office (opens in a new tab)</span></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Closing -->
+  <section class="call" id="call" aria-labelledby="call-title">
+    <div class="wrap call-inner">
+      <p class="runhead runhead-light reveal">The Clarity Call</p>
+      <h2 id="call-title" class="call-title reveal">See all of it together, <em>before you decide.</em></h2>
+      <div class="call-detail reveal">
+        <p class="call-lead">Start with a Clarity Call.</p>
+        <p>A conversation with the planners doing the work about the decision ahead and whether one planning view would help your family. It’s the simplest way to find out if we’re the right fit.</p>
+      </div>
+      <div class="call-actions reveal">
+        <a class="btn btn-light" href="#call" data-placeholder="booking-url">Book a Clarity Call <span class="arrow" aria-hidden="true">→</span></a>
+        <span class="ph ph-dark">[Booking link, phone and email to come]</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- footer:start -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="wordmark" href="index.html" aria-label="Continuum Planning Partners, home">
+          <span class="wm-name">Continuum</span>
+          <span class="wm-sub">Planning Partners</span>
+        </a>
+        <p>10 Cadillac Drive, Suite 300 <span class="ph">[CONFIRM suite: advisor pages list Suite 390]</span><br>Brentwood, Tennessee 37027<br>Phone <a href="tel:+16153096300">615-309-6300</a> <span class="ph">[CONFIRM main number: office listing shows (615) 309-6464]</span><br>Fax 615-309-6301</p>
+        <p>Offices in Brentwood, Knoxville, Johnson City and Tupelo.</p>
+      </div>
+      <nav class="footer-links" aria-label="Legal">
+        <a href="licenses.html">Licenses</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
+        <a href="http://brokercheck.finra.org/" target="_blank" rel="noopener">BrokerCheck<span class="sr-only"> (opens in a new tab)</span></a>
+        <span class="footer-pending">Form ADV <span class="ph">[link to come, CONFIRM whether applicable]</span></span>
+        <span class="footer-pending">Form CRS <span class="ph">[link to come, CONFIRM whether applicable]</span></span>
+      </nav>
+    </div>
+
+    <div class="disclosure" aria-label="Securities disclosures" role="region">
+      <p class="disclosure-head">Securities</p>
+      <p><a href="http://brokercheck.finra.org/" target="_blank" rel="noopener">Check the background of MML Investors Services, LLC on FINRA’s BrokerCheck.</a> <a href="http://brokercheck.finra.org/" target="_blank" rel="noopener">Check the background on any investment professional on FINRA’s BrokerCheck.</a></p>
+      <p>*Financial plan recommendations can be implemented with the advisor of your choosing. Implementation of specific products or services may result in commissions or fees outside of the financial planning fee.</p>
+      <p>*Property &amp; Casualty insurance is offered through a variety of quality insurance companies that are not affiliated with MassMutual or MML Investors Services, LLC.</p>
+      <p>Securities, Investment Advisory and Financial Planning Services offered through qualified registered representatives of MML Investors Services, LLC, Member <a href="https://www.sipc.org/" target="_blank" rel="noopener">SIPC</a>, 10 Cadillac Drive, Suite 300, Brentwood, TN 37027 (615) 309-6300.</p>
+      <!-- COMPLIANCE FLAG: the live site reads "Neither MML Investors Services [or MM if appropriate] nor ...".
+           That is an unfilled template bracket. It is removed here; compliance must confirm the final wording. -->
+      <p>Neither MML Investors Services nor any of its employees or agents are authorized to give legal or tax advice. Consult your own personal attorney legal or tax counsel for advice on specific legal and tax matters.</p>
+      <p>Estate Planning services are provided working in conjunction with your Estate Planning Attorney, Tax Attorney and/or CPA. Consult them for specific advice on legal and tax matters.</p>
+      <p><span class="ph">[CRN to be assigned on compliance review]</span></p>
+      <p>© 2026 Continuum Planning Partners. All Rights Reserved.</p>
+    </div>
+  </div>
+</footer>
+<!-- footer:end -->
+
+<!-- Video lightbox (story video and team clips) -->
+<dialog class="lightbox" data-lightbox aria-labelledby="lightbox-title">
+  <div class="lightbox-inner">
+    <div class="lightbox-bar">
+      <p id="lightbox-title" class="lightbox-title">Video</p>
+      <button class="lightbox-close" type="button" data-lightbox-close>Close <span aria-hidden="true">×</span></button>
+    </div>
+    <div class="lightbox-stage" data-lightbox-stage></div>
+  </div>
+</dialog>
+
+<script src="main.js"></script>
+<script src="review.js" defer></script>
+</body>
+</html>
