@@ -183,6 +183,12 @@
           start += lens[j];
         });
       });
+      if (whole.hasAttribute('data-fill')) {
+        var fill = document.createElementNS(NS, 'path');
+        fill.setAttribute('d', whole.getAttribute('d'));
+        fill.setAttribute('class', 'mark-fill');
+        slots[slots.length - 1].insertBefore(fill, slots[slots.length - 1].firstChild);
+      }
     }
     if (accent) {
       var a = accent.cloneNode(true);
@@ -473,6 +479,55 @@
     pauseLine.style.setProperty('--q', clamp((vh * 0.69 - (r.top + r.height / 2)) / (vh * 0.24)).toFixed(3));
   }
 
+  /* ---------- What we hear on first calls ----------
+     First part of the pinned scroll: lines arrive one by one at scattered spots, the newest
+     at full strength and the rest pushed back. Second part: --g runs 0 to 1 and every line
+     slides from its scattered spot into the settled column. Scattered spots come from each
+     line's data-at (fractions of the stage) and are kept inside the stage edges. */
+  var voices = document.querySelector('[data-voices]');
+  var voicesStage = voices && voices.querySelector('[data-voices-stage]');
+  var voiceItems = voices ? $all('.voice', voices) : [];
+  var voicesStatic = !voices || reduced || forceStacked;
+  if (voices && voicesStatic) {
+    voices.parentNode.classList.add('is-static');
+    voicesStage.style.setProperty('--g', 1);
+    voiceItems.forEach(function (li) { li.classList.add('is-on'); });
+  }
+  function placeVoices() {
+    if (voicesStatic || !voicesStage.offsetHeight) return;
+    var W = voicesStage.clientWidth, H = voicesStage.clientHeight, edge = Math.max(16, W * 0.035);
+    voiceItems.forEach(function (li) {
+      var at = li.getAttribute('data-at').split(',');
+      var s = narrow.matches ? 1 : parseFloat(li.getAttribute('data-s') || '1');
+      var w = li.firstElementChild.offsetWidth, h = li.offsetHeight;
+      li.style.setProperty('--ox', Math.round(w / 2) + 'px');
+      var cx = Math.max(w * s / 2 + edge, Math.min(W - w * s / 2 - edge, at[0] * W));
+      var cy = Math.max(h * s / 2 + edge, Math.min(H - h * s / 2 - edge, at[1] * H));
+      li.style.setProperty('--s0', s);
+      li.style.setProperty('--dx', Math.round(cx - (li.offsetLeft + w / 2)) + 'px');
+      li.style.setProperty('--dy', Math.round(cy - (li.offsetTop + h / 2)) + 'px');
+    });
+  }
+  var voicesShown = -1;
+  function onVoices() {
+    if (voicesStatic || !voices.offsetHeight) return;
+    var r = voices.getBoundingClientRect();
+    var p = clamp((-r.top + window.innerHeight * 0.1) / (r.height - window.innerHeight));
+    var shown = Math.min(voiceItems.length, Math.floor(clamp(p / 0.5) * voiceItems.length + 0.35));
+    voicesStage.style.setProperty('--g', ease(clamp((p - 0.56) / 0.3)).toFixed(3));
+    if (shown === voicesShown) return;
+    voicesShown = shown;
+    voiceItems.forEach(function (li, i) {
+      li.classList.toggle('is-on', i < shown);
+      li.classList.toggle('is-new', i === shown - 1);
+    });
+  }
+  if (voices && !voicesStatic) {
+    placeVoices();
+    window.addEventListener('resize', placeVoices);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(placeVoices);
+  }
+
   /* ---------- Frame loop ---------- */
   var ticking = false;
   function frame() {
@@ -482,6 +537,7 @@
     onParallax();
     onSplit();
     onPause();
+    onVoices();
     if (sheets.length) layout(sheetProgress());
     if (stairPaint) stairPaint();
   }

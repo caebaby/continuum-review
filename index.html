@@ -139,16 +139,16 @@
     </div>
 
     <!--
-      Mark source for the sheets. This is a PLACEHOLDER mark: "CPP" drawn as one monoline path
-      (three subpaths: C, P, P). main.js measures the whole path and cuts it into five equal
-      lengths, one per sheet, so no sheet holds a whole letter. To drop in the real logo, either
-      replace the d attribute below (keep the 640 x 440 viewBox), or replace the data-split path
-      with five <path data-piece> elements in order (CPA, Attorney, Insurance, Banker, Advisor).
-      The data-accent element is added to the last sheet only. See the build notes.
+      Mark source for the sheets: "CPP" in Newsreader Light, the same letters as the large CPP
+      behind the Clarity Call section. The path is the letter outlines. main.js cuts the outline
+      into five equal lengths, one per sheet, so no sheet holds a whole letter; when the sheets
+      join, the data-fill copy fills the letters in. To use a final logo instead, replace the d
+      attribute (keep the 640 x 440 viewBox), or replace the data-split path with five
+      <path data-piece> elements in order (CPA, Attorney, Insurance, Banker, Advisor).
+      See the build notes.
     -->
     <svg class="mark-source" data-mark-source viewBox="0 0 640 440" aria-hidden="true" focusable="false">
-      <path data-split="5" d="M278.3 149.3 A110 110 0 1 0 278.3 290.7 M316 230 H356 A60 60 0 0 0 356 110 H316 V330 M456 230 H496 A60 60 0 0 0 496 110 H456 V330"/>
-      <circle data-accent cx="456" cy="330" r="10"/>
+      <path data-split="5" data-fill d="M162.5 333.9Q176.1 333.9 189.9 329.8Q203.8 325.6 216 316.9L209.1 324.9L233.6 278.1H236.7L225.5 327.8Q211.5 333.1 195.6 335.8Q179.8 338.5 163 338.5Q137 338.5 114.7 331Q92.3 323.4 75.5 308.6Q58.7 293.8 49.4 272Q40 250.2 40 221.6Q40 186.8 55 160.9Q70 135 97.1 120.7Q124.2 106.4 160.3 106.4Q174.6 106.4 188.3 108.8Q202 111.2 215.7 116.2L206.8 116.7L218.2 101.5H219.5L233.5 175.4L230.2 176L204.4 122.2L215.4 132.6Q199 121.7 183.7 117Q168.3 112.2 152.5 112.2Q133.1 112.2 116.5 118.6Q99.8 124.9 87.5 137.8Q75.2 150.7 68.3 170.7Q61.4 190.6 61.4 217.9Q61.4 246.9 69.4 268.6Q77.4 290.4 91.4 304.9Q105.4 319.4 123.6 326.7Q141.9 333.9 162.5 333.9Z M399.5 170.6Q399.5 153.4 392.1 141.2Q384.7 129 367.7 122.5Q350.7 116 321.7 116H284.2L285.3 109.5H339.3Q368.5 109.5 386.2 117.5Q404 125.6 412 139.2Q420 152.8 420 169.8Q420 186.9 411.9 201Q403.8 215 386.1 223.3Q368.4 231.6 339.4 231.6H284.2V225.1H329.3Q353.6 225.1 369.1 218.7Q384.7 212.3 392.1 200Q399.5 187.8 399.5 170.6ZM297.1 109.5V327.2L325.7 332.5V335.4H248.1V332.5L276.9 327.2V117.6L248.2 112.4V109.5Z M579.5 170.6Q579.5 153.4 572.1 141.2Q564.8 129 547.7 122.5Q530.7 116 501.7 116H464.3L465.3 109.5H519.3Q548.6 109.5 566.3 117.5Q584 125.6 592 139.2Q600 152.8 600 169.8Q600 186.9 591.9 201Q583.8 215 566.1 223.3Q548.4 231.6 519.4 231.6H464.3V225.1H509.4Q533.6 225.1 549.2 218.7Q564.7 212.3 572.1 200Q579.5 187.8 579.5 170.6ZM477.1 109.5V327.2L505.8 332.5V335.4H428.2V332.5L456.9 327.2V117.6L428.3 112.4V109.5Z"/>
     </svg>
 
     <div class="stage" data-stage aria-hidden="true">
@@ -192,6 +192,32 @@
         <li><span class="s-num">v.</span><div><p class="s-title">Your plan was built for a smaller life.</p><p class="s-desc">The documents still describe the family you were.</p></div></li>
         <li><span class="s-num">vi.</span><div><p class="s-title">You’re the one translating between everyone.</p><p class="s-desc">Usually in the evenings, from memory.</p></div></li>
       </ol>
+    </div>
+  </section>
+
+  <!-- What we hear on first calls: scattered voices settle into one column with the scroll.
+       Lines are PLACEHOLDERS until Continuum supplies real, anonymous statements from first calls. -->
+  <section class="voices" id="voices" aria-labelledby="voices-title">
+    <div class="voices-runway" data-voices>
+      <div class="wrap voices-stage" data-voices-stage>
+        <p class="runhead voices-runhead">What we hear on first calls</p>
+        <div class="voices-head">
+          <h2 id="voices-title" class="h2">Some version of this, <em>on almost every first call.</em></h2>
+          <p class="body-l voices-lede">It’s where we start: the whole picture on one page, before anything is decided.</p>
+          <p class="voices-note"><span class="ph">[Placeholder lines. Replace with real, anonymous statements from first calls. CONFIRM with compliance]</span></p>
+          <a class="btn btn-cobalt voices-cta" href="#call">Start with a Clarity Call <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+        <ol class="voices-list">
+          <li class="voice" data-at="0.20,0.26" data-s="1.3"><span class="voice-t">“Everyone’s advice is good. It just doesn’t fit together.”</span></li>
+          <li class="voice" data-at="0.74,0.20" data-s="1.1"><span class="voice-t">“We have a buyer. We don’t have a plan.”</span></li>
+          <li class="voice" data-at="0.46,0.44" data-s="1.4"><span class="voice-t">“I’m the one keeping it all in my head.”</span></li>
+          <li class="voice" data-at="0.80,0.56" data-s="1.15"><span class="voice-t">“My CPA and my attorney have never spoken.”</span></li>
+          <li class="voice" data-at="0.24,0.64" data-s="1.2"><span class="voice-t">“I don’t want to be sold something before I understand it.”</span></li>
+          <li class="voice" data-at="0.62,0.76" data-s="1.3"><span class="voice-t">“I don’t know what we’ll actually net.”</span></li>
+          <li class="voice" data-at="0.28,0.86" data-s="1.05"><span class="voice-t">“Every decision seems to change three others.”</span></li>
+          <li class="voice" data-at="0.74,0.90" data-s="1.2"><span class="voice-t">“We’re supposed to decide by March.”</span></li>
+        </ol>
+      </div>
     </div>
   </section>
 
@@ -245,6 +271,7 @@
       <ol class="pledges">
         <li class="reveal"><span class="p-num">a.</span><h3 class="p-title">One picture every advisor can work from.</h3><p>Your CPA, attorney, insurance agent, banker and investment advisor keep doing what they do well, from the same page.</p></li>
         <li class="reveal"><span class="p-num">b.</span><h3 class="p-title">Direct access to the planners.</h3><p>The people building your model are the people you talk to. You won’t be passed along.</p></li>
+        <li class="reveal"><span class="p-num">c.</span><h3 class="p-title">A plan that stands on its own.</h3><p>Finished and yours to keep before anything is implemented, so the strategy is never shaped by a product.</p></li>
       </ol>
     </div>
   </section>

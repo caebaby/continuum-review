@@ -305,7 +305,8 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   border: 1px solid rgba(231, 236, 232, .2); border-bottom: 0; border-radius: 2px 2px 0 0;
 }
 .sheet svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
-.piece { fill: none; stroke: var(--mist); stroke-width: 12; stroke-linecap: round; stroke-linejoin: round; }
+.piece { fill: none; stroke: var(--mist); stroke-width: 2.8; stroke-linecap: round; stroke-linejoin: round; }
+.mark-fill { fill: var(--mist); stroke: none; opacity: calc(var(--joined, 0) * .92); }
 .accent { fill: var(--cobalt); stroke: none; opacity: var(--joined, 0); }
 .sees {
   position: absolute; left: 16px; bottom: 12px; max-width: 52%;
@@ -341,6 +342,43 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .s-desc { color: var(--pewter); font-size: 16px; max-width: 30em; }
 
 /* ---------- Story video band ---------- */
+
+/* ---------- What we hear on first calls ----------
+   Lines arrive scattered (the newest loudest), then settle into one column as --g goes 0 to 1.
+   main.js measures each line's settled spot and sets --dx/--dy to its scattered spot. */
+
+.voices { background: var(--mist); }
+.voices-runway { position: relative; height: 320vh; }
+.voices-stage {
+  --g: 0;
+  position: sticky; top: 0; height: 100vh; overflow: hidden;
+  display: grid; grid-template-columns: repeat(12, 1fr); column-gap: 24px; align-items: center;
+}
+.voices-runhead { position: absolute; left: var(--pad); top: clamp(96px, 13vh, 130px); margin: 0; }
+.voices-head { grid-column: 1 / span 5; opacity: clamp(0, (var(--g) - .7) / .3, 1); transform: translateY(calc(16px * (1 - clamp(0, (var(--g) - .7) / .3, 1)))); }
+.voices-head .h2 { max-width: 13ch; margin-bottom: 26px; }
+.voices-lede { max-width: 24em; }
+.voices-note { margin: 18px 0 30px; }
+.voices .ph { font-size: 11.5px; }
+
+.voices-list { grid-column: 7 / span 6; list-style: none; margin: 0; padding: 0; }
+.voice {
+  --dx: 0px; --dy: 0px; --s0: 1; --ox: 50%;
+  position: relative; transform-origin: var(--ox) 50%;
+  padding: 13px 0; font-family: var(--serif); font-size: clamp(19px, 1.55vw, 24px); line-height: 1.3; letter-spacing: -0.01em;
+  opacity: 0;
+  transform: translate(calc(var(--dx) * (1 - var(--g))), calc(var(--dy) * (1 - var(--g)))) scale(calc(var(--s0) + (1 - var(--s0)) * var(--g)));
+  transition: opacity .6s var(--ease);
+}
+.voice-t { display: inline-block; }
+.voice::before { content: ""; position: absolute; left: 0; right: 0; top: 0; border-top: 1px solid var(--rule); opacity: clamp(0, (var(--g) - .8) / .2, 1); }
+.voice:first-child::before { display: none; }
+.voice.is-on { opacity: calc(.3 + .7 * var(--g)); }
+.voice.is-new { opacity: 1; }
+
+.voices.is-static .voices-runway { height: auto; padding: clamp(96px, 12vw, 160px) 0; }
+.voices.is-static .voices-stage { position: static; height: auto; overflow: visible; }
+.voices.is-static .voices-runhead { position: static; grid-column: 1 / -1; margin-bottom: 24px; }
 
 .story { position: relative; height: clamp(560px, 88vh, 860px); overflow: hidden; color: var(--chalk); background: var(--pine); }
 .story-media { position: absolute; inset: -8% 0; will-change: transform; }
@@ -394,11 +432,12 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .vellum p + p { margin-top: 14px; }
 
 .pledges { display: grid; grid-template-columns: repeat(12, 1fr); column-gap: 24px; }
-.pledges li { grid-column: 2 / span 4; padding-right: 24px; }
-.pledges li:nth-child(2) { grid-column: 8 / span 4; margin-top: 72px; }
-.p-num { display: block; font-family: var(--serif); font-style: italic; font-weight: 300; font-size: 56px; line-height: 1; color: var(--pewter); margin-bottom: 18px; }
-.p-title { font-family: var(--serif); font-size: clamp(24px, 2.1vw, 30px); line-height: 1.15; letter-spacing: -0.01em; margin-bottom: 14px; max-width: 14em; }
-.pledges p { color: var(--pewter); font-size: 16px; }
+.pledges li { grid-column: 1 / span 4; padding-right: 32px; }
+.pledges li:nth-child(2) { grid-column: 5 / span 4; margin-top: 64px; }
+.pledges li:nth-child(3) { grid-column: 9 / span 4; margin-top: 128px; }
+.p-num { display: block; font-family: var(--serif); font-style: italic; font-weight: 300; font-size: 68px; line-height: 1; color: var(--pewter); margin-bottom: 20px; }
+.p-title { font-family: var(--serif); font-size: clamp(27px, 2.5vw, 36px); line-height: 1.12; letter-spacing: -0.015em; margin-bottom: 16px; max-width: 13em; text-wrap: balance; }
+.pledges p { color: var(--pewter); font-size: clamp(17px, 1.25vw, 19px); line-height: 1.6; max-width: 24em; }
 
 /* ---------- Planning comes first, part one: the joined bar comes apart (scroll-scrubbed via --p) ---------- */
 
@@ -672,7 +711,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .pin-leftup .pin-text { right: 18px; bottom: 10px; text-align: right; }
 .pin-left .pin-text { right: 18px; top: -18px; text-align: right; }
 .pin-below .pin-text { right: 4px; top: 16px; text-align: right; }
-.pin-jc .pin-text { right: -10px; bottom: 16px; text-align: right; }
+.pin-jc .pin-text { right: -10px; bottom: 52px; text-align: right; }
 .map-pin:hover .pin-dot, .map-pin.is-active .pin-dot { transform: scale(1.3); box-shadow: 0 0 0 8px rgba(16, 32, 28, .08); }
 .map-pin:focus-visible { outline: none; }
 .map-pin:focus-visible .pin-text { outline: 2px solid var(--cobalt); outline-offset: 4px; }
@@ -830,7 +869,8 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   .vellum { margin: -64px 0 0 8%; transform: none !important; }
   .pledges { grid-template-columns: 1fr; row-gap: 44px; }
   .pledges li { grid-column: 1; padding: 0; margin: 0 !important; }
-  .pledges li:nth-child(2) { grid-column: 1; padding-left: 14%; }
+  .pledges li:nth-child(2) { grid-column: 1; padding-left: 12%; }
+  .pledges li:nth-child(3) { grid-column: 1; padding-left: 24%; }
   .p-num { font-size: 44px; }
 
   .split-head, .pause-head { grid-template-columns: 1fr; row-gap: 24px; }
@@ -845,6 +885,15 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   .split-gap-label { padding: 6px 14px; font-size: 22px; max-width: none; }
   .split-gap-label::before { margin-bottom: 8px; }
   .split-joined { display: none; }
+
+  .voices-stage { display: flex; flex-direction: column; justify-content: center; height: 100svh; padding-top: 70px; padding-bottom: 20px; }
+  .voices-runhead { top: 84px; }
+  .voices-head .h2 { font-size: clamp(30px, 8vw, 38px); margin-bottom: 8px; }
+  .voices-lede { display: none; }
+  .voices-note { margin: 0 0 14px; }
+  .voices-list { order: -1; margin-bottom: 18px; }
+  .voice { font-size: 17px; padding: 8px 0; }
+  .voices.is-static .voices-stage { padding: 0 var(--pad); }
 
   .pause-line { grid-template-columns: 1fr; padding-top: 0; }
   .pause-seg, .pause-two { padding: 0 0 36px 34px; }
@@ -911,7 +960,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   .pin-leftup .pin-text { right: 12px; bottom: 6px; }
   .pin-left .pin-text { right: 12px; top: -12px; }
   .pin-below .pin-text { right: 2px; top: 10px; }
-  .pin-jc .pin-text { bottom: 12px; right: -6px; }
+  .pin-jc .pin-text { bottom: 23px; right: -6px; }
   .offices { grid-template-columns: 1fr; margin-top: 28px; padding: 0; gap: 16px; }
   .office { box-shadow: none; border: 1px solid var(--rule); border-top-width: 2px; }
 
