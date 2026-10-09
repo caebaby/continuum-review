@@ -587,7 +587,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 
 .begin { background: var(--mist); padding: clamp(96px, 11vw, 160px) 0 clamp(110px, 12vw, 180px); }
 .begin-grid { display: grid; grid-template-columns: repeat(12, 1fr); column-gap: 24px; }
-.begin-grid > div:first-child { grid-column: 1 / span 4; }
+.begin-grid > div:first-child { grid-column: 1 / span 4; position: sticky; top: 112px; align-self: start; }
 .begin-grid .h2 { max-width: 9ch; }
 .stair-wrap { grid-column: 5 / span 8; position: relative; }
 .stair { --stair: clamp(0px, 7vw, 120px); padding-top: 8px; position: relative; }
@@ -923,6 +923,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 
   .begin-grid { grid-template-columns: 1fr; }
   .begin-grid > div:first-child, .stair-wrap { grid-column: 1; }
+  .begin-grid > div:first-child { position: static; }
   .begin-grid .h2 { margin-bottom: 48px; }
   .stair { --stair: 20px; }
   .step { padding: 0 0 52px 36px; }
