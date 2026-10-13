@@ -100,7 +100,10 @@
     });
   }
 
-  /* ---------- Rails (decisions, team): [data-rail="id"] with matching prev, next and bar ---------- */
+  /* ---------- Rails (team): [data-rail="id"] with matching prev, next and bar ----------
+     data-rail-hover: while a mouse is over the rail it drifts sideways, turning at each end.
+     Snap is off during the drift and comes back when the pointer leaves. */
+  var hoverQuery = window.matchMedia('(hover: hover) and (pointer: fine)');
   var railUpdates = [];
   $all('[data-rail]').forEach(function (rail) {
     var id = rail.getAttribute('data-rail');
@@ -131,6 +134,32 @@
     rail.addEventListener('scroll', update, { passive: true });
     update();
     railUpdates.push(update);
+
+    if (!rail.hasAttribute('data-rail-hover')) return;
+    var drift = 0, dir = 1, pos = 0, last = 0;
+    function driftStep(t) {
+      var max = rail.scrollWidth - rail.clientWidth;
+      pos += dir * Math.min(t - last, 50) * 0.06;
+      last = t;
+      if (pos >= max) { pos = max; dir = -1; }
+      if (pos <= 0) { pos = 0; dir = 1; }
+      rail.scrollLeft = pos;
+      drift = requestAnimationFrame(driftStep);
+    }
+    rail.addEventListener('pointerenter', function (e) {
+      if (e.pointerType !== 'mouse' || reduced || !hoverQuery.matches || drift) return;
+      rail.style.scrollSnapType = 'none';
+      pos = rail.scrollLeft;
+      if (pos >= rail.scrollWidth - rail.clientWidth - 2) dir = -1;
+      last = performance.now();
+      drift = requestAnimationFrame(driftStep);
+    });
+    rail.addEventListener('pointerleave', function () {
+      if (!drift) return;
+      cancelAnimationFrame(drift);
+      drift = 0;
+      rail.style.scrollSnapType = '';
+    });
   });
 
   /* ---------- Sheets: build the five mark fragments ----------
@@ -427,22 +456,27 @@
     m.addEventListener('focusout', stop);
   });
 
-  /* ---------- Locations: an office card and its map pin and line highlight together ---------- */
+  /* ---------- Locations: a map pin, its route line and its office card light up together ----------
+     Hovering or focusing either the pin or the card highlights all three; leaving the map and
+     cards clears it, so no office stays louder than the others. */
   var locations = document.querySelector('[data-locations]');
   if (locations) {
     var linked = $all('[data-office], [data-office-line]', locations);
-    var setOffice = function (id) {
+    var lightOffice = function (id) {
       linked.forEach(function (el) {
-        el.classList.toggle('is-active', id !== null && (el.getAttribute('data-office') || el.getAttribute('data-office-line')) === id);
+        el.classList.toggle('is-active', (el.getAttribute('data-office') || el.getAttribute('data-office-line')) === id);
       });
     };
     $all('[data-office]', locations).forEach(function (el) {
       var id = el.getAttribute('data-office');
-      el.addEventListener('pointerenter', function () { setOffice(id); });
-      el.addEventListener('pointerleave', function () { setOffice(null); });
-      el.addEventListener('focusin', function () { setOffice(id); });
-      el.addEventListener('focusout', function () { setOffice(null); });
+      el.addEventListener('pointerenter', function () { lightOffice(id); });
+      el.addEventListener('focusin', function () { lightOffice(id); });
     });
+    var locGrid = locations.querySelector('.loc-grid');
+    if (locGrid) {
+      locGrid.addEventListener('pointerleave', function () { lightOffice(null); });
+      locGrid.addEventListener('focusout', function (e) { if (!locGrid.contains(e.relatedTarget)) lightOffice(null); });
+    }
   }
 
   /* ---------- Planning comes first: the joined bar comes apart ----------
@@ -464,70 +498,6 @@
     splitBar.style.setProperty('--p', p.toFixed(3));
   }
 
-  /* ---------- The pause: the timeline plays with the scroll ----------
-     On wide screens --q runs 0 to 1 while the timeline's centre moves from 69%
-     to 45% of the screen height: line, milestone, pause panel, then step two.
-     Narrow screens, reduced motion and static captures keep the one-shot reveal. */
-  var pauseLine = document.querySelector('.pause-line');
-  function onPause() {
-    if (!pauseLine) return;
-    var scrub = !(reduced || forceStacked || narrow.matches);
-    pauseLine.classList.toggle('is-scrub', scrub);
-    if (!scrub) return;
-    var r = pauseLine.getBoundingClientRect();
-    var vh = window.innerHeight;
-    pauseLine.style.setProperty('--q', clamp((vh * 0.69 - (r.top + r.height / 2)) / (vh * 0.24)).toFixed(3));
-  }
-
-  /* ---------- What we hear on first calls ----------
-     First part of the pinned scroll: lines arrive one by one at scattered spots, the newest
-     at full strength and the rest pushed back. Second part: --g runs 0 to 1 and every line
-     slides from its scattered spot into the settled column. Scattered spots come from each
-     line's data-at (fractions of the stage) and are kept inside the stage edges. */
-  var voices = document.querySelector('[data-voices]');
-  var voicesStage = voices && voices.querySelector('[data-voices-stage]');
-  var voiceItems = voices ? $all('.voice', voices) : [];
-  var voicesStatic = !voices || reduced || forceStacked;
-  if (voices && voicesStatic) {
-    voices.parentNode.classList.add('is-static');
-    voicesStage.style.setProperty('--g', 1);
-    voiceItems.forEach(function (li) { li.classList.add('is-on'); });
-  }
-  function placeVoices() {
-    if (voicesStatic || !voicesStage.offsetHeight) return;
-    var W = voicesStage.clientWidth, H = voicesStage.clientHeight, edge = Math.max(16, W * 0.035);
-    voiceItems.forEach(function (li) {
-      var at = li.getAttribute('data-at').split(',');
-      var s = narrow.matches ? 1 : parseFloat(li.getAttribute('data-s') || '1');
-      var w = li.firstElementChild.offsetWidth, h = li.offsetHeight;
-      li.style.setProperty('--ox', Math.round(w / 2) + 'px');
-      var cx = Math.max(w * s / 2 + edge, Math.min(W - w * s / 2 - edge, at[0] * W));
-      var cy = Math.max(h * s / 2 + edge, Math.min(H - h * s / 2 - edge, at[1] * H));
-      li.style.setProperty('--s0', s);
-      li.style.setProperty('--dx', Math.round(cx - (li.offsetLeft + w / 2)) + 'px');
-      li.style.setProperty('--dy', Math.round(cy - (li.offsetTop + h / 2)) + 'px');
-    });
-  }
-  var voicesShown = -1;
-  function onVoices() {
-    if (voicesStatic || !voices.offsetHeight) return;
-    var r = voices.getBoundingClientRect();
-    var p = clamp((-r.top + window.innerHeight * 0.1) / (r.height - window.innerHeight));
-    var shown = Math.min(voiceItems.length, Math.floor(clamp(p / 0.5) * voiceItems.length + 0.35));
-    voicesStage.style.setProperty('--g', ease(clamp((p - 0.56) / 0.3)).toFixed(3));
-    if (shown === voicesShown) return;
-    voicesShown = shown;
-    voiceItems.forEach(function (li, i) {
-      li.classList.toggle('is-on', i < shown);
-      li.classList.toggle('is-new', i === shown - 1);
-    });
-  }
-  if (voices && !voicesStatic) {
-    placeVoices();
-    window.addEventListener('resize', placeVoices);
-    if (document.fonts && document.fonts.ready) document.fonts.ready.then(placeVoices);
-  }
-
   /* ---------- Frame loop ---------- */
   var ticking = false;
   function frame() {
@@ -536,8 +506,6 @@
     onWipes();
     onParallax();
     onSplit();
-    onPause();
-    onVoices();
     if (sheets.length) layout(sheetProgress());
     if (stairPaint) stairPaint();
   }
